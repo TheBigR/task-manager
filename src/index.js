@@ -32,6 +32,29 @@ app.post('/tasks', (req, res) => {
     })
 })
 
+app.get('/users', (req, res) => {
+  User.find({})
+    .then((users) => {
+      res.send(users)
+    })
+    .catch((error) => {
+      res.status(500).send(error)
+    })
+})
+
+app.get('/users/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send()
+      }
+      res.send(user)
+    })
+    .catch((e) => {
+      res.status(400).send(e)
+    })
+})
+
 app.listen(port, () => {
   console.log('Server is up on port ' + port)
 })
