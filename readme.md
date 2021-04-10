@@ -4,3 +4,4 @@ validator
 express
 bcryptjs
 jwt
+multer
