@@ -3,6 +3,7 @@ const Task = require('../models/task')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 
+//create task
 router.post('/tasks', auth, async (req, res) => {
   const task = new Task({
     ...req.body,
@@ -51,6 +52,7 @@ router.get('/tasks', auth, async (req, res) => {
   }
 })
 
+//get specific task
 router.get('/tasks/:id', auth, async (req, res) => {
   const _id = req.params.id
   try {
@@ -64,6 +66,7 @@ router.get('/tasks/:id', auth, async (req, res) => {
   }
 })
 
+//edit specific task
 router.patch('/tasks/:id', auth, async (req, res) => {
   const updates = Object.keys(req.body)
   const allowedUpdates = ['description', 'completed']
@@ -88,6 +91,7 @@ router.patch('/tasks/:id', auth, async (req, res) => {
   }
 })
 
+//delete specific task
 router.delete('/tasks/:id', auth, async (req, res) => {
   try {
     const task = await Task.findOneAndDelete({

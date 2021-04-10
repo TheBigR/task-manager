@@ -2,3 +2,5 @@
 /playground
 /.pnp
 .pnp.js
+*.env
+/*.env
