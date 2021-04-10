@@ -1,5 +1,8 @@
 node server app created as a POC.
 
+app is used to CRUD users and tasks.
+showcase authorization, email sending and file uploading.
+
 Libraries used:
 mongodb
 mongoose
