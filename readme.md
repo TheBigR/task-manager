@@ -5,3 +5,4 @@ express
 bcryptjs
 jwt
 multer
+sharp
