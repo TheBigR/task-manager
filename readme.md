@@ -3,3 +3,4 @@ mongoose
 validator
 express
 bcryptjs
+jwt
