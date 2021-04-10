@@ -1,27 +1,26 @@
 const mongoose = require('mongoose')
 
-const taskSchema = new mongoose.Schema({
-  description: {
-    type: String,
-    required: true,
-    trim: true,
+const taskSchema = new mongoose.Schema(
+  {
+    description: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    completed: {
+      type: Boolean,
+      default: false,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
   },
-  completed: {
-    type: Boolean,
-    default: false,
+  {
+    timestamps: true,
   },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'User',
-  },
-})
-
-taskSchema.pre('save', async function (next) {
-  const task = this
-
-  next()
-})
+)
 
 const Task = mongoose.model('Task', taskSchema)
 
