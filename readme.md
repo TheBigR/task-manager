@@ -14,6 +14,7 @@ multer
 sharp
 sendgrid
 env-cmd
+Jest
 
 api is online at: https://thebigr-task-manager.herokuapp.com/
 
