@@ -15,6 +15,7 @@ sharp
 sendgrid
 env-cmd
 Jest
+SuperTest
 
 api is online at: https://thebigr-task-manager.herokuapp.com/
 
