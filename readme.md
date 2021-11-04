@@ -17,7 +17,7 @@ env-cmd
 Jest
 SuperTest
 
-api is online at: https://thebigr-task-manager.herokuapp.com/
+
 
 postman requests for testing the api: https://www.getpostman.com/collections/831838b50af75d205cc6
 
